@@ -8,4 +8,6 @@ services:
       dockerfile: Dockerfile
     restart: always
     volumes:
-      - "./db.db:/app/db.db"
+      - type: bind
+        source: ./db.db
+        target: /app/db.db
